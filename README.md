@@ -375,8 +375,6 @@ After successful authentication, the system checks the user's role and redirects
 
 For GitHub README, add:
 
-    <img width="504" height="451" alt="image" src="https://github.com/user-attachments/assets/3e8b5aee-0c89-4343-82f6-447ace6417f6" />
-
 
 ## 2. Signup Page
 
@@ -392,8 +390,6 @@ Typical fields include:
 
 For GitHub README, add:
 
-    ![Signup Page](screenshots/signup.png)
-
 ## 3. Customer Management Page
 
 The customer page is used to view and manage customer information.
@@ -407,8 +403,6 @@ Possible operations include:
 
 For GitHub README, add:
 
-    <img width="1275" height="670" alt="image" src="https://github.com/user-attachments/assets/23ad711d-2bc6-4353-9475-27a40b5bd56e" />
-    <img width="1278" height="662" alt="image" src="https://github.com/user-attachments/assets/dbc5e0ae-30ea-41e0-8e48-517207e73dc4" />
 
 
 
@@ -428,9 +422,6 @@ Possible information includes:
 
 For GitHub README, add:
 
-    <img width="1277" height="675" alt="image" src="https://github.com/user-attachments/assets/5259919a-3beb-471c-b3cf-06c73762992e" />
-    <img width="1279" height="668" alt="image" src="https://github.com/user-attachments/assets/d900ff05-0e59-4725-91da-5c29d03f2cc5" />
-
 
 
 ## 5. Product List Page
@@ -447,8 +438,6 @@ Typical information includes:
 - Product actions
 
 For GitHub README, add:
-
-    <img width="1279" height="690" alt="image" src="https://github.com/user-attachments/assets/15277557-f7dc-4ed2-97df-e03c6d74c6df" />
 
 
 ## 6. Product Form Page
