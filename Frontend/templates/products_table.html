@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Products_Table page</h1>
+<a href ="/inventory/products/">
+    <button>Add Products</button>
+</a>
+<table>
+    <th>
+        <tr>
+            <th>Product Name</th>
+            <th>Product code</th>
+            <th>Price</th><!--heading will be static -->
+            <th>GST</th>
+            <th>Food Product</th>
+            <th>picture</th>
+            <th>file</th>
+            <th>Update</th>
+            <th>delete</th>
+        </tr>
+    </th>
+    <tb>
+        <!--getting the data from the database and showing in ui-->
+        {% for products in all_products%} <!--all_products is the function named in view-->
+           <tr>
+              <td>{{products.product_name}}</td> <!--data in table-->
+              <td>{{products.product_code}}</td>
+              <td>{{products.price}}</td>
+              <td>{{products.gst}}</td>
+              <td>{{products.food_type}}</td>
+              <td>
+                {%if products.picture %} <!--to show picture field in ui-->
+                <img src="{{products.picture.url}}" width="50px">
+                {%else%}
+                No picture
+                {%endif %}
+              </td>
+              <td>
+                {%if products.file %} <!--to show picture field in ui-->
+                {{products.file.url}}
+                {%else%}
+                No picture
+                {%endif %}
+              </td>
+              <td>
+                <a href="{% url 'product_update'  products.id %}">
+                <button>Update</button></a>
+            </td>
+            <td>
+                <a href="{% url 'product_delete'  products.id %}">
+                <button>Delete</button>
+                </a>
+            </td>
+
+
+            </tr>
+        {%endfor%}
+    </tb>
+</table>
+{% endblock %}

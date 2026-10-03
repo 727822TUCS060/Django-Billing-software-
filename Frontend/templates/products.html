@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Products page</h1>
+<a href ="/inventory/products_table/">
+    <button>Back</button>
+</a>
+
+<form action="" method="POST" enctype="multipart/form-data"><!--Method name will be uppercase of all letters and if rendering in same url use action as empty if not include the path name -->
+    {% csrf_token %} <!--get the input from python-->
+    {{product_form}} <!--render the form from views-->
+    <br>
+    <input type="submit" value="Add product" class ="btn btn-primary">
+</form>
+{% endblock %}

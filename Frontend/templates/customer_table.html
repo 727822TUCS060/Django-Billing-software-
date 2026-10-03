@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+<h1>Customers_Table page</h1>
+<a href ="/order/customers/">
+    <button>Add Customers</button>
+</a>
+
+<table>
+    <th>
+        <tr>
+            <th>Customer Name</th>
+            <th>Customer Since</th>
+            <th>Update</th>
+            <th>delete</th>
+        </tr>
+    </th>
+    <tb>
+        <!--getting the data from the database and showing in ui-->
+        {% for customers in all_customers %} <!--all_products is the function named in view-->
+           <tr>
+              <td>{{customers.customer_name}}</td> <!--data in table-->
+              <td>{{customers.customer_since}}</td>
+               <td>
+                <a href="{% url 'customer_update'  customers.id %}">
+                <button>Update</button></a>
+                </td>
+                <td>
+                <a href="{% url 'customer_delete'  customers.id %}">
+                <button>Delete</button>
+                </a>
+            </td>
+
+
+
+
+            </tr>
+        {%endfor%}
+    </tb>
+</table>
+<!--<img src="{% static 'assets/images/cover.jpg'%}" --> <!--display the image in ui-->
+
+<p class = 'white-text'>This is a customer Detail page which shows the customer details</p>
+{% endblock %}

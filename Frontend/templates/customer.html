@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Customers page</h1>
+<a href ="/order/customer_table/">
+    <button>Back</button>
+</a>
+
+<form action="" method="POST"><!--Method name will be uppercase of all letters and if rendering in same url use action as empty if not include the path name -->
+    {% csrf_token %} <!--get the input from python-->
+    {{customer_form}} <!--render the form from views-->
+    <input type="submit" value="Add Customer">
+</form>
+{% endblock %}

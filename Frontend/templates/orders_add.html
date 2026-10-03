@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Orders_Page</h1>
+<form action="" method="POST"><!--Method name will be uppercase of all letters and if rendering in same url use action as empty if not include the path name -->
+    {% csrf_token %} <!--get the input from python-->
+    {{order_form}} <!--render the form from views-->
+    <input type="submit">
+</form>
+{% endblock %}
