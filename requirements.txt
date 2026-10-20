@@ -1,5 +1,12 @@
-django
-mysqlclient
-pillow
-django-bootstrap-v5
-gunicorn
+asgiref==3.11.1
+beautifulsoup4==4.15.0
+Django==4.2.30
+django-bootstrap-v5==1.0.11
+mysqlclient==2.2.8
+pillow==12.3.0
+PyMySQL==1.2.3
+python-dotenv==1.2.4
+soupsieve==2.9.1
+sqlparse==0.5.5
+typing_extensions==4.16.0
+tzdata==2026.2
