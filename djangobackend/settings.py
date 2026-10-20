@@ -12,9 +12,15 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / '.env')
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +32,7 @@ SECRET_KEY = 'django-insecure-)+zs2z=)ys6i6$7l689k_30jrlx_vtgv@ra^5lc(go+#q!6%r3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*'] # to allow all hosts 
 
 
 # Application definition
@@ -78,20 +84,24 @@ WSGI_APPLICATION = 'djangobackend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+import os
+
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-        #using mysql 
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django',#database name created in sql 
-        'USER' :'root',
-        'PASSWORD' :'Kishore007$$',
-        'HOST':'localhost',
-        'PORT':'3306'
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+            'ssl': {
+                'ca': os.environ.get('DB_SSL_CA'),
+            },
+        },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
