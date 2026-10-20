@@ -2,4 +2,4 @@ django
 mysqlclient
 pillows
 bootstrap5
-
+gunicorn
