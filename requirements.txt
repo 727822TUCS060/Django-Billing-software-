@@ -1,5 +1,5 @@
 django
 mysqlclient
-pillows
+pillow
 bootstrap5
 gunicorn
